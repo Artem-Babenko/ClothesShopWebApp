@@ -1,4 +1,24 @@
 ﻿
-@{
+@model Category
 
+@{
+    ViewBag.Title = Model.Name;
 }
+
+<!-- Контент сторінки -->
+<div class="clothes-list">
+    @foreach(var clothes in Model.Clothes)
+    {
+        <a class="clothes" asp-controller="Clothes" asp-action="ClothesPage" asp-route-id="@clothes.Id">
+            <div class="photo">
+                <img src="@clothes.Photos.FirstOrDefault()?.LocalPath" alt="Фото одягу">
+                <i class='bx bx-heart wish-button'></i>
+            </div>
+            <div class="name">@clothes.Name</div>
+            <div class="prise">@clothes.Prise грн</div>
+        </a>
+    }
+</div>
+
+<!-- Додавання файлів -->
+<link rel="stylesheet" href="/css/clothesCategory.css" asp-append-version="true" />
