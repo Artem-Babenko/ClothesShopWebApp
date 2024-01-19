@@ -1,1 +1,101 @@
 ﻿
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Ubuntu',sans-serif;
+    list-style: none;
+}
+
+/* Голова сайту */
+header{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 5px;
+    margin: 20px 40px;
+}
+
+header .site-name{
+    font-weight: 500;
+    font-size: 25px;
+    text-decoration: none;
+    color: black;
+}
+
+/* Посилання */
+header nav{
+    display: flex;
+    align-items: center;
+}
+
+header nav a{
+    text-decoration: none;
+    color: #333;
+    padding: 5px 10px;
+}
+
+/* Клавіші */
+header .right{
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+header .right button{
+    background-color: white;
+    border: none;
+    outline: none;
+    font-size: 22px;
+    position: relative;
+    padding: 5px;
+    cursor: pointer;
+}
+
+header .right button span{
+    font-size: 12px;
+    font-weight: 500;
+    position: absolute;
+    top: 0;
+    right: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 14px;
+    width: 14px;
+    background-color: white;
+    border-radius: 50px;
+    color: black;
+}
+
+main{
+    min-height: 600px;
+}
+
+/* Низ сайту */
+footer {
+    display: flex;
+    justify-content: space-around;
+    padding: 20px 80px;
+    background-color: #606C38;
+}
+
+footer div h3{
+    font-weight: 500;
+    font-size: 16px;
+    padding-bottom: 5px;
+    color: white;
+}
+
+footer div ul li{
+    padding: 5px 0;
+}
+
+footer div ul li a{
+    text-decoration: none;
+    color: #eee;
+    padding: 5px 0;
+    font-size: 14px;
+}
