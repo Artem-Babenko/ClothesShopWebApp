@@ -1,14 +1,98 @@
-﻿<!DOCTYPE html>
+﻿
+@inject DatabaseContext db;
+
+@{
+    List<Category> maleCategories = db.Categories.Where(c => c.Audience!.Type == AudienceType.Male).ToList();
+    List<Category> femaleCategories = db.Categories.Where(c => c.Audience!.Type == AudienceType.Female).ToList();
+}
+
+<!-- Сторінка -->
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="/css/layout.css"/>
-    <title>@ViewData["Title"] - WearShopWebApp</title>
+    <link rel="stylesheet" href="/css/layout.css" asp-append-version="true">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <title>Магазин одягу | @ViewData["Title"]</title>
 </head>
 <body>
 
+    <header>
+        <!-- Права сторона голови сайту -->
+        <a asp-controller="Home" asp-action="HomePage" class="site-name">Магазин одягу</a>
 
+        <!-- Центр голови сайту -->
+        <nav>
+            <a asp-controller="" asp-action="">Акції</a>
+            <a asp-controller="Category" asp-action="Male">Чоловічий одяг</a>
+            <a asp-controller="Category" asp-action="Female">Жіночий одяг</a>
+            <a asp-controller="" asp-action="">Бестселери</a>
+            <a asp-controller="" asp-action="">Новинки</a>
+        </nav>
+        
+        <!-- Права сторона голови сайту -->
+        <div class="right">
+            <button class="search">
+                <i class='bx bx-search'></i>
+            </button>
+            <button class="wish-button">
+                <i class='bx bx-heart'></i>
+                <span class="count">0</span>
+            </button>
+            <button class="basket-button">
+                <i class='bx bx-shopping-bag'></i>
+                <span class="count">0</span>
+            </button>
+            <button class="profile-button">
+                <i class='bx bx-user'></i>
+            </button>
+        </div>
+    </header>
 
+    <!-- Центр сайту -->
+    <main>
+        @RenderBody()
+    </main>
+
+    <!-- Низ сайту -->
+    <footer>
+        <div>
+            <h3>Чоловічий одяг</h3>
+            <ul>
+                @foreach (Category category in maleCategories)
+                {
+                    <li>
+                        <a asp-controller="" asp-action="" asp-route-id="@category.Id">
+                            @category.Name
+                        </a>
+                    </li>
+                }
+            </ul>
+        </div>
+        <div>
+            <h3>Жіночий одяг</h3>
+            <ul>
+                @foreach (Category category in femaleCategories)
+                {
+                    <li>
+                        <a asp-controller="" asp-action="" asp-route-id="@category.Id">
+                            @category.Name
+                        </a>
+                    </li>
+                }
+            </ul>
+        </div>
+        <div>
+            <h3>Інформація</h3>
+            <ul>
+                <li><a asp-controller="" asp-action="">Про нас</a></li>
+                <li><a asp-controller="" asp-action="">Як замовити?</a></li>
+                <li><a asp-controller="" asp-action="">Обмін та повернення</a></li>
+                <li><a asp-controller="" asp-action="">Оплата та доставка</a></li>
+                <li><a asp-controller="" asp-action="">Про сайт</a></li>
+            </ul>
+        </div>
+    </footer>
 </body>
 </html>
