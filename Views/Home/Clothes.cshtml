@@ -1,4 +1,45 @@
 ﻿
-@{
+@model Clothes
 
+@{
+    ViewBag.Title = Model.Name;
 }
+
+<!-- Контент сторінки -->
+<div class="container">
+    <div class="photos">
+        @foreach(var photo in Model.Photos)
+        {
+            <img src="@photo.LocalPath" />
+        }
+    </div>
+    <div class="info">
+        <div class="name">@Model.Name</div>
+        <div class="prise">@Model.Prise грн</div>
+        <div class="">Кольори</div>
+        <div class="colors">
+            @foreach(var color in Model.Colors)
+            {
+                <button class="color-icon" style="background-color: @color.Hex;"></button>
+            }
+        </div>
+        <div class="">Розміри</div>
+        <div class="sizes">
+            @foreach (var size in Model.Sizes)
+            {
+                <button class="size">@size.Title</button>
+            }
+        </div>
+        <button class="add-to-basket">
+            <i class='bx bx-shopping-bag'></i>
+            <span>Додати у кошик</span>
+        </button>
+        <button class="add-to-wish">
+            <i class='bx bx-heart'></i>
+            <span>Додати до бажаного</span>
+        </button>
+    </div>
+</div>
+
+<!-- Додавання файлів -->
+<link rel="stylesheet" href="/css/clothes.css" asp-append-version="true" />
