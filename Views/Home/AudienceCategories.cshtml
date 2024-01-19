@@ -1,0 +1,22 @@
+﻿
+@model List<Category>
+
+@{
+    ViewBag.Title = ViewBag.AudienceClothes;
+}
+
+<!-- Контент сторінки -->
+<h2>@ViewBag.AudienceClothes</h2>
+
+<div class="categories">
+    @foreach(Category category in Model)
+    {
+        <a class="category" asp-controller="Category" asp-action="Category" asp-route-id="@category.Id">
+            <img src="@category.PhotoPath">
+            <div class="name">@category.Name</div>
+        </a>
+    }
+</div>
+
+<!-- Додавання файлів -->
+<link rel="stylesheet" href="/css/audienceCategories.css" asp-append-version="true"/>
