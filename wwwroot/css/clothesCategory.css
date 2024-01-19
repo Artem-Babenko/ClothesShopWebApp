@@ -1,0 +1,64 @@
+﻿
+/* Список одягу */
+.clothes-list{
+    padding: 20px 40px;
+    margin: 0 auto; 
+    max-width: 1200px;
+    margin-bottom: 20px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+/* Одяг */
+.clothes-list .clothes{
+    text-decoration: none;
+    color: black;
+    flex-basis: 25%;
+    box-shadow: -5px 1px 10px rgba(0,0,0,0.2);
+}
+
+.clothes .photo{
+    position: relative;
+}
+
+/* Фото одягу */
+.clothes .photo img{
+    width: 100%;
+    object-fit: cover;
+}
+
+/* Клавіша бажане */
+.clothes .photo .wish-button{
+    position: absolute;
+    top: 0;
+    right: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 30px;
+    width: 30px;
+    margin: 10px;
+    padding-top: 2px;
+    box-shadow: -3px 1px 5px inset rgba(0,0,0,0.3);
+    background-color: white;
+    border-radius: 50px;
+    cursor: pointer; 
+}
+
+/* Назва */
+.clothes .name{
+    text-align: center;
+    font-size: 16px;
+    color: #333;
+    padding: 5px;
+}
+
+/* Ціна */
+.clothes .prise {
+    text-align: center;
+    color: #444;
+    font-size: 15px;
+    font-weight: 500;
+    padding: 5px 5px 10px;
+}

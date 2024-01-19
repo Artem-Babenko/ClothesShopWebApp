@@ -1,0 +1,47 @@
+﻿
+/* Назва сторінки */
+h2{
+    text-align: center;
+    padding: 10px;
+    font-weight: 500;
+}
+
+/* Елемент з категоріями */
+.categories{
+    display: flex;
+    flex-wrap: wrap;
+    padding: 0 20px;
+    margin: 0 auto;
+    max-width: 1200px;
+    margin-bottom: 20px;
+}
+
+/* Категорія */
+.categories .category{
+    flex-basis: calc(25% - 40px);
+    margin: 20px;
+    display: flex;
+    flex-direction: column;
+    box-shadow: -5px 1px 10px rgba(0,0,0,0.1);
+    cursor: pointer;
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+
+.categories .category:hover{
+    transform: scale(1.02);
+}
+
+.categories .category img{
+    width: 100%;
+    object-fit: cover;
+    height: 200px;
+}
+
+.categories .category .name {
+    color: #333;
+    padding: 10px 10px;
+    font-weight: 400;
+    text-align: center;
+
+}
