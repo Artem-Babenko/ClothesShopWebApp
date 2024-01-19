@@ -18,7 +18,7 @@ public class Clothes
 
     public float Prise { get; set; }
 
-    public string? Color { get; set; }
+    public List<Color> Colors { get; set; } = new List<Color>();
 
     public int Count { get; set; }
 
