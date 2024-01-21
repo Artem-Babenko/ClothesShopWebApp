@@ -1,6 +1,6 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 
-namespace WearShopWebApp.Controllers;
+namespace СlothesShopWebApp.Controllers;
 
 public class HomeController : Controller
 {

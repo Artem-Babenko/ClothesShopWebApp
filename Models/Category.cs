@@ -1,6 +1,6 @@
 ﻿using System.ComponentModel.DataAnnotations;
 
-namespace WearShopWebApp.Models;
+namespace СlothesShopWebApp.Models;
 
 public class Category
 {
@@ -13,6 +13,6 @@ public class Category
     public List<Clothes> Clothes { get; set; } = new List<Clothes>();
 
     public Audience? Audience { get; set; }
-    
+
     public int? AudienceId { get; set; }
 }

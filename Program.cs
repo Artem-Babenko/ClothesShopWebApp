@@ -2,7 +2,7 @@
 using Microsoft.AspNetCore.Authentication.Cookies;
 using Microsoft.AspNetCore.ResponseCompression;
 using Microsoft.EntityFrameworkCore;
-using WearShopWebApp;
+using СlothesShopWebApp;
 
 var builder = WebApplication.CreateBuilder();
 builder.Services.AddControllersWithViews();

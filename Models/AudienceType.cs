@@ -1,4 +1,4 @@
-﻿namespace WearShopWebApp.Models;
+﻿namespace СlothesShopWebApp.Models;
 
 public class AudienceType
 {

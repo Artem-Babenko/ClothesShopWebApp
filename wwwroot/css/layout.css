@@ -10,7 +10,7 @@
 }
 
 /* Голова сайту */
-header{
+.header{
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -18,7 +18,7 @@ header{
     margin: 20px 40px;
 }
 
-header .site-name{
+.header .site-name{
     font-weight: 500;
     font-size: 25px;
     text-decoration: none;
@@ -26,35 +26,36 @@ header .site-name{
 }
 
 /* Посилання */
-header nav{
+.header nav{
     display: flex;
     align-items: center;
 }
 
-header nav a{
+.header nav a{
     text-decoration: none;
     color: #333;
     padding: 5px 10px;
 }
 
 /* Клавіші */
-header .right{
+.header .right{
     display: flex;
     align-items: center;
-    gap: 5px;
+    gap: 10px;
 }
 
-header .right button{
+.header .right button{
     background-color: white;
     border: none;
     outline: none;
     font-size: 22px;
     position: relative;
     padding: 5px;
+    padding-top: 10px;
     cursor: pointer;
 }
 
-header .right button span{
+.header .right button span{
     font-size: 12px;
     font-weight: 500;
     position: absolute;
@@ -65,6 +66,7 @@ header .right button span{
     justify-content: center;
     height: 14px;
     width: 14px;
+    margin-top: 5px;
     background-color: white;
     border-radius: 50px;
     color: black;
@@ -75,27 +77,39 @@ main{
 }
 
 /* Низ сайту */
-footer {
+.footer {
     display: flex;
     justify-content: space-around;
     padding: 20px 80px;
     background-color: #606C38;
 }
 
-footer div h3{
+.footer div h3{
     font-weight: 500;
     font-size: 16px;
     padding-bottom: 5px;
     color: white;
 }
 
-footer div ul li{
+.footer div ul li{
     padding: 5px 0;
 }
 
-footer div ul li a{
+.footer div ul li a{
     text-decoration: none;
     color: #eee;
     padding: 5px 0;
     font-size: 14px;
+}
+
+@media screen and (width < 900px){
+    .header nav{
+        display: none;
+    }
+}
+
+@media screen and (width < 600px) {
+    .header {
+        margin: 10px 20px;
+    }
 }

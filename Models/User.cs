@@ -1,6 +1,6 @@
 ﻿using System.ComponentModel.DataAnnotations;
 
-namespace WearShopWebApp.Models;
+namespace СlothesShopWebApp.Models;
 
 public class User
 {

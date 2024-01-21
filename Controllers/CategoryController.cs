@@ -1,8 +1,8 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
-using WearShopWebApp.Models;
+using СlothesShopWebApp.Models;
 
-namespace WearShopWebApp.Controllers;
+namespace СlothesShopWebApp.Controllers;
 
 public class CategoryController : Controller
 {

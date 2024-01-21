@@ -1,21 +1,21 @@
 ﻿
 /* Головна частина */
 .container{
+    padding: 10px 20px;
     display: flex;
-    gap: 40px;
-    padding: 10px 40px;
+    justify-content: center;
 }
 
-.photos{
-    flex-basis: 50%;
+.photos{    
 }
 
-.photos img{
-    width: 100%;
+.photos img {
+    object-fit: cover;
+    max-height: 700px;
 }
 
-.info{
-    flex-basis: 50%;
+.info {
+
 }
 
 .info .name{
@@ -96,4 +96,14 @@
 
 .info .add-to-basket i{
     font-size: 20px;
+}
+
+@media screen and (width < 750px){
+    .container{
+        display: flex;
+        gap: 40px;
+        flex-direction: column;
+        padding: 10px;
+    }
+
 }

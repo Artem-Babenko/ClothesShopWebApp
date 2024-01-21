@@ -1,6 +1,6 @@
 ﻿using System.ComponentModel.DataAnnotations;
 
-namespace WearShopWebApp.Models;
+namespace СlothesShopWebApp.Models;
 
 // Представляє інформацію про колір одягу.
 public class Color

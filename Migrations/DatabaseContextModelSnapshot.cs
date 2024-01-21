@@ -4,7 +4,7 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
-using WearShopWebApp;
+using СlothesShopWebApp;
 
 #nullable disable
 
@@ -30,12 +30,24 @@ namespace WearShopWebApp.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
 
-                    b.Property<string>("Name")
+                    b.Property<string>("Type")
                         .HasColumnType("nvarchar(max)");
 
                     b.HasKey("Id");
 
                     b.ToTable("Audiences");
+
+                    b.HasData(
+                        new
+                        {
+                            Id = 1,
+                            Type = "male"
+                        },
+                        new
+                        {
+                            Id = 2,
+                            Type = "female"
+                        });
                 });
 
             modelBuilder.Entity("WearShopWebApp.Models.Category", b =>
@@ -60,6 +72,126 @@ namespace WearShopWebApp.Migrations
                     b.HasIndex("AudienceId");
 
                     b.ToTable("Categories");
+
+                    b.HasData(
+                        new
+                        {
+                            Id = 1,
+                            AudienceId = 1,
+                            Name = "Куртки",
+                            PhotoPath = "/categoryPhotos/men's jacket.jpeg"
+                        },
+                        new
+                        {
+                            Id = 2,
+                            AudienceId = 1,
+                            Name = "Джинси",
+                            PhotoPath = "/categoryPhotos/men's jeans.jpg"
+                        },
+                        new
+                        {
+                            Id = 3,
+                            AudienceId = 1,
+                            Name = "Штани",
+                            PhotoPath = "/categoryPhotos/men's pants.jpg"
+                        },
+                        new
+                        {
+                            Id = 4,
+                            AudienceId = 1,
+                            Name = "Світшоти",
+                            PhotoPath = "/categoryPhotos/men's sweatshirt.jpg"
+                        },
+                        new
+                        {
+                            Id = 5,
+                            AudienceId = 1,
+                            Name = "Светри"
+                        },
+                        new
+                        {
+                            Id = 6,
+                            AudienceId = 1,
+                            Name = "Футболки"
+                        },
+                        new
+                        {
+                            Id = 7,
+                            AudienceId = 1,
+                            Name = "Сорочки"
+                        },
+                        new
+                        {
+                            Id = 8,
+                            AudienceId = 1,
+                            Name = "Шорти"
+                        },
+                        new
+                        {
+                            Id = 9,
+                            AudienceId = 2,
+                            Name = "Куртки та пальта"
+                        },
+                        new
+                        {
+                            Id = 10,
+                            AudienceId = 2,
+                            Name = "Джинси"
+                        },
+                        new
+                        {
+                            Id = 11,
+                            AudienceId = 2,
+                            Name = "Штани і легінси"
+                        },
+                        new
+                        {
+                            Id = 12,
+                            AudienceId = 2,
+                            Name = "Світшоти"
+                        },
+                        new
+                        {
+                            Id = 13,
+                            AudienceId = 2,
+                            Name = "Светри"
+                        },
+                        new
+                        {
+                            Id = 14,
+                            AudienceId = 2,
+                            Name = "Блузки"
+                        },
+                        new
+                        {
+                            Id = 15,
+                            AudienceId = 2,
+                            Name = "Футболки та топи"
+                        },
+                        new
+                        {
+                            Id = 16,
+                            AudienceId = 2,
+                            Name = "Сукні"
+                        },
+                        new
+                        {
+                            Id = 17,
+                            AudienceId = 2,
+                            Name = "Сорочки"
+                        },
+                        new
+                        {
+                            Id = 18,
+                            AudienceId = 2,
+                            Name = "Спідниці"
+                        },
+                        new
+                        {
+                            Id = 19,
+                            AudienceId = 2,
+                            Name = "Шорти"
+                        });
                 });
 
             modelBuilder.Entity("WearShopWebApp.Models.Clothes", b =>
@@ -72,9 +204,6 @@ namespace WearShopWebApp.Migrations
 
                     b.Property<int?>("CategoryId")
                         .HasColumnType("int");
-
-                    b.Property<string>("Color")
-                        .HasColumnType("nvarchar(max)");
 
                     b.Property<int>("Count")
                         .HasColumnType("int");
@@ -99,6 +228,65 @@ namespace WearShopWebApp.Migrations
                     b.HasIndex("CategoryId");
 
                     b.ToTable("Clothes");
+
+                    b.HasData(
+                        new
+                        {
+                            Id = 1,
+                            CategoryId = 1,
+                            Count = 5,
+                            CreateDate = new DateTime(2024, 1, 19, 0, 0, 0, 0, DateTimeKind.Local),
+                            MaterialsDescription = "100% поліестер",
+                            Name = "Чоловічий пуховик на блискавці",
+                            Prise = 1549f
+                        });
+                });
+
+            modelBuilder.Entity("WearShopWebApp.Models.Color", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+
+                    b.Property<int?>("ClothesId")
+                        .HasColumnType("int");
+
+                    b.Property<string>("Hex")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Name")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("ClothesId");
+
+                    b.ToTable("Colors");
+
+                    b.HasData(
+                        new
+                        {
+                            Id = 1,
+                            ClothesId = 1,
+                            Hex = "#CCC",
+                            Name = "Сірий"
+                        },
+                        new
+                        {
+                            Id = 2,
+                            ClothesId = 1,
+                            Hex = "#3d0f0f",
+                            Name = "Бордовий"
+                        },
+                        new
+                        {
+                            Id = 3,
+                            ClothesId = 1,
+                            Hex = "#0f144a",
+                            Name = "Синій"
+                        });
                 });
 
             modelBuilder.Entity("WearShopWebApp.Models.Comment", b =>
@@ -170,6 +358,26 @@ namespace WearShopWebApp.Migrations
                     b.HasIndex("ClothesId");
 
                     b.ToTable("Photos");
+
+                    b.HasData(
+                        new
+                        {
+                            Id = 1,
+                            ClothesId = 1,
+                            LocalPath = "/clothesPhotos/169579534755b6b57ee8d8805234309d890fb7.jpg"
+                        },
+                        new
+                        {
+                            Id = 2,
+                            ClothesId = 1,
+                            LocalPath = "/clothesPhotos/169579534448daa59f7bb9c796ea145ace05723c21_thumbnail_900x.jpg"
+                        },
+                        new
+                        {
+                            Id = 3,
+                            ClothesId = 1,
+                            LocalPath = "/clothesPhotos/1695795342ad226754a58ed6ff5a733f3599bed69b_thumbnail_900x.jpg"
+                        });
                 });
 
             modelBuilder.Entity("WearShopWebApp.Models.Size", b =>
@@ -191,6 +399,26 @@ namespace WearShopWebApp.Migrations
                     b.HasIndex("ClothesId");
 
                     b.ToTable("Sizes");
+
+                    b.HasData(
+                        new
+                        {
+                            Id = 1,
+                            ClothesId = 1,
+                            Title = "46 (S)"
+                        },
+                        new
+                        {
+                            Id = 2,
+                            ClothesId = 1,
+                            Title = "48 (M)"
+                        },
+                        new
+                        {
+                            Id = 3,
+                            ClothesId = 1,
+                            Title = "50 (L)"
+                        });
                 });
 
             modelBuilder.Entity("WearShopWebApp.Models.User", b =>
@@ -237,6 +465,15 @@ namespace WearShopWebApp.Migrations
                         .HasForeignKey("CategoryId");
 
                     b.Navigation("Category");
+                });
+
+            modelBuilder.Entity("WearShopWebApp.Models.Color", b =>
+                {
+                    b.HasOne("WearShopWebApp.Models.Clothes", "Clothes")
+                        .WithMany("Colors")
+                        .HasForeignKey("ClothesId");
+
+                    b.Navigation("Clothes");
                 });
 
             modelBuilder.Entity("WearShopWebApp.Models.Comment", b =>
@@ -293,6 +530,8 @@ namespace WearShopWebApp.Migrations
 
             modelBuilder.Entity("WearShopWebApp.Models.Clothes", b =>
                 {
+                    b.Navigation("Colors");
+
                     b.Navigation("Comments");
 
                     b.Navigation("Photos");

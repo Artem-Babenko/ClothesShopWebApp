@@ -1,6 +1,6 @@
 ﻿using System.ComponentModel.DataAnnotations;
 
-namespace WearShopWebApp.Models;
+namespace СlothesShopWebApp.Models;
 
 public class Clothes
 {
@@ -12,7 +12,7 @@ public class Clothes
 
     public List<Size> Sizes { get; set; } = new List<Size>();
 
-    public List<Comment> Comments { get; set; } = new List<Comment>(); 
+    public List<Comment> Comments { get; set; } = new List<Comment>();
 
     public string? Description { get; set; }
 

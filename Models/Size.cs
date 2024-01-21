@@ -1,7 +1,7 @@
 ﻿using System.ComponentModel.DataAnnotations;
 using System.Text.Json.Serialization;
 
-namespace WearShopWebApp.Models;
+namespace СlothesShopWebApp.Models;
 
 public class Size
 {

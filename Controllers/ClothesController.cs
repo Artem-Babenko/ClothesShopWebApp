@@ -1,7 +1,8 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
+using СlothesShopWebApp;
 
-namespace WearShopWebApp.Controllers;
+namespace СlothesShopWebApp.Controllers;
 
 public class ClothesController : Controller
 {
