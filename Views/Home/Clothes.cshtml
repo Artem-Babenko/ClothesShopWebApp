@@ -52,14 +52,14 @@
     <div class="info">
         <div class="name">@Model.Name</div>
         <div class="prise">@Model.Prise грн</div>
-        <div class="">Кольори</div>
+        <label>Кольори</label>
         <div class="colors">
             @foreach(var color in Model.Colors)
             {
                 <button class="color-icon" style="background-color: @color.Hex;"></button>
             }
         </div>
-        <div class="">Розміри</div>
+        <label>Розміри</label>
         <div class="sizes">
             @foreach (var size in Model.Sizes)
             {
