@@ -1,12 +1,14 @@
 ﻿
 /* Головна частина */
 .container{
-    padding: 10px 20px;
+    padding: 10px;
     display: flex;
+    gap: 60px;
     justify-content: center;
 }
 
-.photos{    
+.photos{  
+    
 }
 
 .photos img {
@@ -19,47 +21,58 @@
 }
 
 .info .name{
-    font-size: 25px;
-    font-weight: 300;
+    font-size: 23px;
+    font-weight: 400;
     padding: 10px 0;
 }
 
 .info .prise{
-    padding: 5px 0;
-    font-size: 18px;
+    font-size: 20px;
+    padding: 5px 0; 
+    font-weight: 500;
+}
+
+.info label{
+    padding-top: 15px;
+    font-size: 16px;
+    color: #333;
 }
 
 .info .colors{
     display: flex;
     gap: 10px;
-    padding: 10px 0;
+    padding: 5px 0 10px;
     flex-wrap: wrap;
 }
 
 .info .colors .color-icon{
-    height: 40px;
-    width: 40px;
-    border-radius: 50%;
+    height: 38px;
+    width: 38px;
     border: none;
     outline: none;
-    box-shadow: -5px 1px 5px rgba(0,0,0,0.2);
+    box-shadow: 1px 3px 5px rgba(0,0,0,0.1);
+    outline: 4px solid transparent;
+    border: 2px solid transparent;
     cursor: pointer;
+}
+
+.info .colors .color-icon.active{
+    border: 2px solid black;
 }
 
 .info .sizes{
     display: flex;
     gap: 10px;
-    padding: 10px 0;
+    padding: 5px 0 10px;
     flex-wrap: wrap;
 }
 
 .info .sizes .size{
-    padding: 10px;
+    padding: 5px 10px;
     border: none;
     outline: none;
-    box-shadow: -5px 1px 5px rgba(0,0,0,0.2);
-    cursor: pointer;
-    border-radius: 5px;
+    /*box-shadow: 1px 3px 5px rgba(0,0,0,0.1);*/
+    border: 1px solid #ccc;
     background-color: white;
 }
 
@@ -67,18 +80,19 @@
     display: flex;
     align-items: center;
     gap: 10px;
+    margin: 15px 0;
     padding: 10px 20px;
-    font-size: 17px;
+    font-size: 18px;
     border: none;
     outline: none;
-    border-radius: 5px;
+    border-radius: 2px;
     background-color: #606C38;
     color: white;
     cursor: pointer;
 }
 
 .info .add-to-basket i{
-    font-size: 21px;
+    font-size: 23px;
 }
 
 .info .add-to-wish{
@@ -86,15 +100,15 @@
     align-items: center;
     gap: 10px;
     padding: 5px 10px;
-    margin: 5px 0;
-    font-size: 15px;
+    margin: 10px 0;
+    font-size: 16px;
     border: none;
     outline: none;
     background-color: transparent;
     cursor: pointer;
 }
 
-.info .add-to-basket i{
+.info .add-to-wish i{
     font-size: 20px;
 }
 
@@ -105,5 +119,14 @@
         flex-direction: column;
         padding: 10px;
     }
+}
 
+@media screen and (width < 600px){
+    .container{
+        gap: 10px;
+        padding: 0;
+    }
+    .info{
+        padding: 0 20px;
+    }
 }
